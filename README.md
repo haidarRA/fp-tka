@@ -101,6 +101,8 @@ Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 2900 d
 ![Screenshot from 2024-06-21 12-59-27](https://github.com/haidarRA/fp-tka/assets/149871906/170d0710-bafb-4e19-856f-34a5299b1021)
 Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 5400 dengan failure 0%.
 
-4. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 200 dan durasi waktu load testing 60 detik
+Sayangnya, untuk mendapatkan jumlah peak concurrency maksimum untuk spawn rate 200 dan 500 tidak dapat dilakukan karena terdapat failure, yang kemungkinan besar disebabkan oleh banyaknya request yang diterima oleh website.
 
+# Kesimpulan
+Dari pengetesan ini, dapat disimpulkan bahwa semakin banyak request yang diterima oleh website, maka semakin besar kemungkinan rentan akan adanya failure. Hal ini disebabkan karena kualitas layanan yang disediakan oleh Digital Ocean. Sebagai cloud service provider dengan penggunaan yang mudah digunakan dan harganya yang cukup terjangkau, hal ini membuat Digital Ocean mempunyai perbedaan kualitas yang signifikan dibandingkan dengan cloud service provider yang lain seperti Microsoft Azure.
 
