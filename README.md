@@ -28,22 +28,59 @@ Berikut adalah desain rancangan arsitektur komputasi awan kami untuk final proje
 
 Untuk tabel harga dari desain rancangan arsitektur komputasi awan kami adalah sebagai berikut.
 ![tabel harga final](https://github.com/haidarRA/fp-tka/assets/149871906/37452e73-5086-4d69-92c4-27f9bba19e6f)
+---
+# Implementasi
+### 1. Setup MongoDB
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/a3227ec5-13c0-41a4-859c-bddfe06cd3ff)
 
-# Hasil Pengujian
-1. Jumlah RPS maksimum selama 60 detik
-![image](https://github.com/haidarRA/fp-tka/assets/149871906/7f90fe62-7faf-42a9-82cb-f1068bcea334)
-Untuk mencari jumlah RPS maksimum, berikut adalah konfigurasi locust kami.
+### 2. Setup 2 Droplet 6$ untuk Back-End
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/8d28f95f-b7e8-4da7-a3be-5d1485678a41)
 
-* Number of users: 1500
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/dab1d9c3-dabd-4dfe-9475-e5315bace3f4)
 
-* Users per second: 50
+### 3. Setup 1 Droplet 12$ untuk Front-End
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/9a6a25ed-02b1-401d-af74-6aa2789f179a)
 
-* RPS maksimum: 63,7
+### 4. Setup Front-End
+- Install apache2 dengan command `sudo apt-get install apache2`
+- Konfigurasi index.html dan styles.css
+- Masukkan command `systemctl restart apache2` untuk restart service apache2 agar konfigurasi bisa terpakai
+- Akses web melalui IP Droplet atau IP Loadbalancer
 
-* Failures: 0%
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/3cd33dbb-4499-438b-8543-7244f6fe1f72)
 
-2. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing 60 detik
-![image](https://github.com/haidarRA/fp-tka/assets/149871906/9061d99d-d9fa-4b68-a046-a694bbb9f725)
-Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 290 dengan failure 0%.
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/dfb7ed43-7a37-48e1-b337-85e954798f67)
 
-3. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 100 dan durasi waktu load testing 60 detik
+### 5. Setup Back-End
+- Install python3 dengan command `sudo apt-get install python3`
+- Install dependencies yang diperlukan :
+  - `sudo apt-get install python3-pip`
+  - `pip install flask`
+  - `pip install flask_cors`
+  - `pip install textblob`
+  - `pip install pymongo`
+  - `pip install gunicorn`
+- Lakukan konfigurasi terhadap sentiment_analysis.py
+- Nyalakan dengan command `gunicorn -b 0.0.0.0:80 sentiment_analysis:app --daemon` agar tetap berjalan ketika device server dimatikan
+
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/eea9f2bc-bfe5-4012-a5fe-ee7df87e152d)
+
+### 6. Locustfile
+- Lakukan deploy terhadap locustfile menggunakan `locust -f locustfile.py --host http://(IP backend):80`
+
+# Pengujian API
+
+### 1. Analyze text
+- Akses melalui ip-address-frontend/analyze
+
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/711f59ab-c788-4568-9431-cd42f25b3622)
+
+### 2. Retrieve History
+- Akses melalui ip-address-backend/history
+
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/3249bb87-a5e8-44fc-9798-334e31b184f5)
+
+
+
+
+
