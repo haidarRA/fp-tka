@@ -30,16 +30,18 @@ Untuk tabel harga dari desain rancangan arsitektur komputasi awan kami adalah se
 ![tabel harga final](https://github.com/haidarRA/fp-tka/assets/149871906/37452e73-5086-4d69-92c4-27f9bba19e6f)
 
 # Hasil Pengujian
-1. Jumlah RPS maksimum
-![image](https://github.com/haidarRA/fp-tka/assets/149871906/94530114-2ba9-4424-b6ae-c0d96de522da)
+1. Jumlah RPS maksimum selama 60 detik
+![image](https://github.com/haidarRA/fp-tka/assets/149871906/7f90fe62-7faf-42a9-82cb-f1068bcea334)
 Untuk mencari jumlah RPS maksimum, berikut adalah konfigurasi locust kami.
 
-* Number of users: 1000
+* Number of users: 1500
 
 * Users per second: 50
 
-* RPS maksimum: 30,3
+* RPS maksimum: 63,7
 
 * Failures: 0%
 
-2. 
+2. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing 60 detik
+![image](https://github.com/haidarRA/fp-tka/assets/149871906/724a6dc6-0ffd-4e0e-a892-bb93ff1e94d4)
+Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 1500 dengan failure 0%.
