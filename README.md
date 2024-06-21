@@ -43,5 +43,7 @@ Untuk mencari jumlah RPS maksimum, berikut adalah konfigurasi locust kami.
 * Failures: 0%
 
 2. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing 60 detik
-![image](https://github.com/haidarRA/fp-tka/assets/149871906/724a6dc6-0ffd-4e0e-a892-bb93ff1e94d4)
-Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 1500 dengan failure 0%.
+![image](https://github.com/haidarRA/fp-tka/assets/149871906/9061d99d-d9fa-4b68-a046-a694bbb9f725)
+Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 290 dengan failure 0%.
+
+3. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 100 dan durasi waktu load testing 60 detik
