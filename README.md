@@ -27,4 +27,4 @@ Berikut adalah desain rancangan arsitektur komputasi awan kami untuk final proje
 ![image](https://github.com/haidarRA/fp-tka/assets/149871906/6519a2c2-4620-495d-b06d-dd0a926b124a)
 
 Untuk tabel harga dari desain rancangan arsitektur komputasi awan kami adalah sebagai berikut.
-![tabel harga final](https://github.com/haidarRA/fp-tka/assets/149871906/d0cc6943-eadc-4783-8384-7de76e5d54c1)
+![tabel harga final](https://github.com/haidarRA/fp-tka/assets/149871906/37452e73-5086-4d69-92c4-27f9bba19e6f)
