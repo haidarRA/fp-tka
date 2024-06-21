@@ -24,7 +24,7 @@ Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutu
 # Desain Rancangan Arsitektur Komputasi Awan dan Tabel Harga #
 Untuk cloud service provider yang kami gunakan untuk final project ini adalah Digital Ocean karena penggunaannya yang mudah dan harganya yang cukup terjangkau bagi kami.
 Berikut adalah desain rancangan arsitektur komputasi awan kami untuk final project ini.
-![image](https://github.com/haidarRA/fp-tka/assets/149871906/acc47e93-2c78-4f09-a3b9-436d36c0867b)
+![image](https://github.com/haidarRA/fp-tka/assets/149871906/6519a2c2-4620-495d-b06d-dd0a926b124a)
 
 Untuk tabel harga dari desain rancangan arsitektur komputasi awan kami adalah sebagai berikut.
-![tabel harga](https://github.com/haidarRA/fp-tka/assets/149871906/804f93d6-d480-45af-b501-f006d88d0f2c)
+![tabel harga final](https://github.com/haidarRA/fp-tka/assets/149871906/d0cc6943-eadc-4783-8384-7de76e5d54c1)
