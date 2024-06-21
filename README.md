@@ -28,3 +28,18 @@ Berikut adalah desain rancangan arsitektur komputasi awan kami untuk final proje
 
 Untuk tabel harga dari desain rancangan arsitektur komputasi awan kami adalah sebagai berikut.
 ![tabel harga final](https://github.com/haidarRA/fp-tka/assets/149871906/37452e73-5086-4d69-92c4-27f9bba19e6f)
+
+# Hasil Pengujian
+1. Jumlah RPS maksimum
+![image](https://github.com/haidarRA/fp-tka/assets/149871906/94530114-2ba9-4424-b6ae-c0d96de522da)
+Untuk mencari jumlah RPS maksimum, berikut adalah konfigurasi locust kami.
+
+* Number of users: 1000
+
+* Users per second: 50
+
+* RPS maksimum: 30,3
+
+* Failures: 0%
+
+2. 
