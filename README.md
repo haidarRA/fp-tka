@@ -1,5 +1,5 @@
-# fp-tka
-Final Project Teknologi Komputasi Awan 2024
+# Final Project Teknologi Komputasi Awan
+TKA Kelas B
 # KELOMPOK B3 #
 | Nama      | NRP         |
   |-----------|-------------|
