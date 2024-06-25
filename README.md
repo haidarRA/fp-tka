@@ -24,22 +24,23 @@ Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutu
 # Desain Rancangan Arsitektur Komputasi Awan dan Tabel Harga #
 Untuk cloud service provider yang kami gunakan untuk final project ini adalah Digital Ocean karena penggunaannya yang mudah dan harganya yang cukup terjangkau bagi kami.
 Berikut adalah desain rancangan arsitektur komputasi awan kami untuk final project ini.
-![image](https://github.com/haidarRA/fp-tka/assets/149871906/6519a2c2-4620-495d-b06d-dd0a926b124a)
+![WhatsApp Image 2024-06-25 at 22 55 21_06b9f5f8](https://github.com/v0rein/fp-tka/assets/143814923/c70fc200-9a0e-47f8-a206-59e63029af2e)
 
 Untuk tabel harga dari desain rancangan arsitektur komputasi awan kami adalah sebagai berikut.
-![tabel harga final](https://github.com/haidarRA/fp-tka/assets/149871906/37452e73-5086-4d69-92c4-27f9bba19e6f)
+![WhatsApp Image 2024-06-25 at 22 55 25_f8d72088](https://github.com/v0rein/fp-tka/assets/143814923/da3e2c84-644c-4bf0-ac88-f524e88d4bab)
+
 ---
 # Implementasi
 ### 1. Setup MongoDB
 ![image](https://github.com/haidarRA/fp-tka/assets/143814923/a3227ec5-13c0-41a4-859c-bddfe06cd3ff)
 
-### 2. Setup 2 Droplet 6$ untuk Back-End
-![image](https://github.com/haidarRA/fp-tka/assets/143814923/8d28f95f-b7e8-4da7-a3be-5d1485678a41)
+### 2. Setup 2 Droplet 8$ untuk Back-End
+![image](https://github.com/v0rein/fp-tka/assets/143814923/bf75806d-f4ba-48d1-b360-4084ceb11622)
 
-![image](https://github.com/haidarRA/fp-tka/assets/143814923/dab1d9c3-dabd-4dfe-9475-e5315bace3f4)
+![image](https://github.com/v0rein/fp-tka/assets/143814923/379990eb-747a-43c8-a2ac-39adec756cb7)
 
-### 3. Setup 1 Droplet 12$ untuk Front-End
-![image](https://github.com/haidarRA/fp-tka/assets/143814923/9a6a25ed-02b1-401d-af74-6aa2789f179a)
+### 3. Setup 1 Droplet 8$ untuk Front-End
+![image](https://github.com/v0rein/fp-tka/assets/143814923/23e35837-6a4b-4465-974e-a12854ea0b81)
 
 ### 4. Setup Front-End
 - Install apache2 dengan command `sudo apt-get install apache2`
@@ -49,7 +50,7 @@ Untuk tabel harga dari desain rancangan arsitektur komputasi awan kami adalah se
 
 ![image](https://github.com/haidarRA/fp-tka/assets/143814923/3cd33dbb-4499-438b-8543-7244f6fe1f72)
 
-![image](https://github.com/haidarRA/fp-tka/assets/143814923/dfb7ed43-7a37-48e1-b337-85e954798f67)
+![image](https://github.com/v0rein/fp-tka/assets/143814923/731324d4-027e-4733-bb5a-7d0b5d5888aa)
 
 ### 5. Setup Back-End
 - Install python3 dengan command `sudo apt-get install python3`
@@ -61,9 +62,9 @@ Untuk tabel harga dari desain rancangan arsitektur komputasi awan kami adalah se
   - `pip install pymongo`
   - `pip install gunicorn`
 - Lakukan konfigurasi terhadap sentiment_analysis.py
-- Nyalakan dengan command `gunicorn -b 0.0.0.0:80 sentiment_analysis:app --daemon` agar tetap berjalan ketika device server dimatikan
+- Nyalakan dengan command `gunicorn -b 0.0.0.0:5000 sentiment_analysis:app --daemon` agar tetap berjalan ketika device server dimatikan
 
-![image](https://github.com/haidarRA/fp-tka/assets/143814923/eea9f2bc-bfe5-4012-a5fe-ee7df87e152d)
+![image](https://github.com/v0rein/fp-tka/assets/143814923/0f675575-e283-4fc0-82ae-f6185d95401c)
 
 ### 6. Locustfile
 - Lakukan deploy terhadap locustfile menggunakan `locust -f locustfile.py --host http://(IP backend):80`
@@ -82,27 +83,38 @@ Untuk tabel harga dari desain rancangan arsitektur komputasi awan kami adalah se
 
 # Hasil Load Testing
 1. Jumlah RPS maksimum selama 60 detik
-![Screenshot from 2024-06-21 12-49-44](https://github.com/haidarRA/fp-tka/assets/149871906/6a6d32ef-f72b-4260-839d-21a5aa1333be)
+![image](https://github.com/v0rein/fp-tka/assets/143814923/4ea5da57-d61c-4976-ad88-41833770eb12)
 Untuk mencari jumlah RPS maksimum, berikut adalah konfigurasi locust kami.
 
 * Number of users: 1500
 
-* Users per second: 50
+* Users per second: 500
 
-* RPS maksimum: 63,7
+* RPS maksimum: 188,17
 
 * Failures: 0%
 
 2. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing 60 detik
-![Screenshot from 2024-06-21 12-54-55](https://github.com/haidarRA/fp-tka/assets/149871906/ca3cf27b-0d98-4449-a217-15f06a247ccb)
-Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 2900 dengan failure 0%.
+![image](https://github.com/v0rein/fp-tka/assets/143814923/20663ddf-5df3-4745-8417-55232ffd5c8b)
+
+Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 5000 dengan failure 0%.
 
 3. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 100 dan durasi waktu load testing 60 detik
-![Screenshot from 2024-06-21 12-59-27](https://github.com/haidarRA/fp-tka/assets/149871906/170d0710-bafb-4e19-856f-34a5299b1021)
-Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 5400 dengan failure 0%.
+![image](https://github.com/v0rein/fp-tka/assets/143814923/75d6a565-0c04-4274-b3f4-efc2d8cc8975)
 
-Sayangnya, untuk mendapatkan jumlah peak concurrency maksimum untuk spawn rate 200 dan 500 tidak dapat dilakukan karena terdapat failure, yang kemungkinan besar disebabkan oleh banyaknya request yang diterima oleh website.
+Saat pengujian dengan spawn rate 100, didapatkan peak concurrency maksimum 4000 dengan failure 0%.
 
+4. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 200 dan durasi waktu load testing 60 detik
+![image](https://github.com/v0rein/fp-tka/assets/143814923/2b953e8e-9c92-4dd2-a15f-af23eaff666f)
+
+Saat pengujian dengan spawn rate 200, didapatkan peak concurrency maksimum 2000 dengan failure 0%.
+
+5. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 500 dan durasi waktu load testing 60 detik
+![image](https://github.com/v0rein/fp-tka/assets/143814923/4ea5da57-d61c-4976-ad88-41833770eb12)
+
+Saat pengujian dengan spawn rate 500, didapatkan peak concurrency maksimum 1500 dengan failure 0%.
 # Kesimpulan
-Dari pengetesan ini, dapat disimpulkan bahwa semakin banyak request yang diterima oleh website, maka semakin besar kemungkinan rentan akan adanya failure. Hal ini disebabkan karena kualitas layanan yang disediakan oleh Digital Ocean. Sebagai cloud service provider dengan penggunaan yang mudah digunakan dan harganya yang cukup terjangkau, hal ini membuat Digital Ocean mempunyai perbedaan kualitas yang signifikan dibandingkan dengan cloud service provider yang lain seperti Microsoft Azure.
+Berdasarkan pengetesan yang kita lakukan menggunakan locust yang telah disediakan, ada beberapa faktor yang memengaruhi pengetesan tersebut yaitu koneksi internet, peak concurrency yang diinput, serta spawn rate dalam bentuk users/second yang diinput. Lalu dalam pengetesan ini juga kami menggunakan mongodb Compass yang merupakan GUI dari jenis database yang kita gunakan untuk menghapus data dari pengetesan sebelumnya untuk melakukan pengetesan baru agar optimal.
 
+Berdasarkan pengetesan yang kita dapat juga bisa diambil bahwa semakin banyak spawn rate yang kita gunakan, semakin kecil peak concurrency dari stress test ini lalu RPS atau Request Per Second akan semakin tinggi.
+Apabila dalam projek kedepannya diperlukan vm serta pengujian yang mementingkan titik kerja dalam backend maka kita memerlukan vm yang diperuntukkan dalam keperluan backend yang lebih banyak dan membuat load balancer untuk vm-vm tersebut serta membuat vm-vm yang diperlukan untuk back-end tersebut dengan spesifikasi yang maksimal serta storage yang cukup untuk keperluan database.
