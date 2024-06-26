@@ -97,24 +97,24 @@ Untuk mencari jumlah RPS maksimum, berikut adalah konfigurasi locust kami.
 2. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing 60 detik
 ![image](https://github.com/v0rein/fp-tka/assets/143814923/20663ddf-5df3-4745-8417-55232ffd5c8b)
 
-Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 5000 dengan failure 0%.
+Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 5000 dengan failure 0% serta RPS 143,6 (21,54 poin)
 
 3. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 100 dan durasi waktu load testing 60 detik
 ![image](https://github.com/v0rein/fp-tka/assets/143814923/75d6a565-0c04-4274-b3f4-efc2d8cc8975)
 
-Saat pengujian dengan spawn rate 100, didapatkan peak concurrency maksimum 4000 dengan failure 0%.
+Saat pengujian dengan spawn rate 100, didapatkan peak concurrency maksimum 4000 dengan failure 0% serta RPS 169,17 (25,37 poin)
 
 4. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 200 dan durasi waktu load testing 60 detik
 ![image](https://github.com/v0rein/fp-tka/assets/143814923/2b953e8e-9c92-4dd2-a15f-af23eaff666f)
 
-Saat pengujian dengan spawn rate 200, didapatkan peak concurrency maksimum 2000 dengan failure 0%.
+Saat pengujian dengan spawn rate 200, didapatkan peak concurrency maksimum 2000 dengan failure 0% serta RPS 173,5 (26,025 poin)
 
 5. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 500 dan durasi waktu load testing 60 detik
 ![image](https://github.com/v0rein/fp-tka/assets/143814923/4ea5da57-d61c-4976-ad88-41833770eb12)
 
-Saat pengujian dengan spawn rate 500, didapatkan peak concurrency maksimum 1500 dengan failure 0%.
+Saat pengujian dengan spawn rate 500, didapatkan peak concurrency maksimum 1500 dengan failure 0% serta RPS 188,17 (28,22 poin)
 # Kesimpulan
-Berdasarkan pengetesan yang kita lakukan menggunakan locust yang telah disediakan, ada beberapa faktor yang memengaruhi pengetesan tersebut yaitu koneksi internet, peak concurrency yang diinput, serta spawn rate dalam bentuk users/second yang diinput. Lalu dalam pengetesan ini juga kami menggunakan mongodb Compass yang merupakan GUI dari jenis database yang kita gunakan untuk menghapus data dari pengetesan sebelumnya untuk melakukan pengetesan baru agar optimal.
+Berdasarkan pengetesan yang kita lakukan menggunakan locust yang telah disediakan, ada beberapa faktor yang memengaruhi pengetesan tersebut yaitu koneksi internet, peak concurrency yang diinput, spawn rate dalam bentuk users/second yang diinput serta spesifikasi dari vm yang akan diisi dengan backend. Lalu dalam pengetesan ini juga kami menggunakan mongodb Compass yang merupakan GUI dari jenis database yang kita gunakan untuk menghapus data dari pengetesan sebelumnya untuk melakukan pengetesan baru agar optimal.
 
 Berdasarkan pengetesan yang kita dapat juga bisa diambil bahwa semakin banyak spawn rate yang kita gunakan, semakin kecil peak concurrency dari stress test ini lalu RPS atau Request Per Second akan semakin tinggi.
 Apabila dalam projek kedepannya diperlukan vm serta pengujian yang mementingkan titik kerja dalam backend maka kita memerlukan vm yang diperuntukkan dalam keperluan backend yang lebih banyak dan membuat load balancer untuk vm-vm tersebut serta membuat vm-vm yang diperlukan untuk back-end tersebut dengan spesifikasi yang maksimal serta storage yang cukup untuk keperluan database.
