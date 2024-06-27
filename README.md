@@ -83,36 +83,32 @@ Untuk tabel harga dari desain rancangan arsitektur komputasi awan kami adalah se
 
 # Hasil Load Testing
 1. Jumlah RPS maksimum selama 60 detik
-![image](https://github.com/v0rein/fp-tka/assets/143814923/4ea5da57-d61c-4976-ad88-41833770eb12)
-Untuk mencari jumlah RPS maksimum, berikut adalah konfigurasi locust kami.
+Apabila kita mencari rps maksimum secara rata-rata maka hasilnya kita dapatkan pada peak concurrency 4000 user dengan spawn rate 100
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/6b496578-16c2-430a-963f-3dde57b3a693)
+Kita mendapat rata-rata RPS yaitu 124,5.
+Sedangkan apabila kita mencari rps maksimum atau peak rps maka hasilnya kita dapatkan pada peak concurrency 1500 user dengan spawn rate 500
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/b49e5535-fe1a-4fa8-9f85-a1deb8781647)
+Kita mendapat peak RPS di 290,71.
 
-* Number of users: 1500
+3. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing 60 detik
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/c71bca16-3b4c-4066-968b-d7672769f038)
 
-* Users per second: 500
-
-* RPS maksimum: 188,17
-
-* Failures: 0%
-
-2. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 50 dan durasi waktu load testing 60 detik
-![image](https://github.com/v0rein/fp-tka/assets/143814923/20663ddf-5df3-4745-8417-55232ffd5c8b)
-
-Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 5000 dengan failure 0% serta RPS 143,6 (21,54 poin)
+Saat pengujian dengan spawn rate 50, didapatkan peak concurrency maksimum 5000 dengan failure 0% serta peak RPS 215,9 dengan rata-rata rps 118,5.
 
 3. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 100 dan durasi waktu load testing 60 detik
-![image](https://github.com/v0rein/fp-tka/assets/143814923/75d6a565-0c04-4274-b3f4-efc2d8cc8975)
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/6b496578-16c2-430a-963f-3dde57b3a693)
 
-Saat pengujian dengan spawn rate 100, didapatkan peak concurrency maksimum 4000 dengan failure 0% serta RPS 169,17 (25,37 poin)
+Saat pengujian dengan spawn rate 100, didapatkan peak concurrency maksimum 4000 dengan failure serta rata-rata RPS 124,5 dengan peak RPS 239,8.
 
 4. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 200 dan durasi waktu load testing 60 detik
-![image](https://github.com/haidarRA/fp-tka/assets/143814923/7a782558-40cb-486a-be9e-7db0fbcafed7)
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/0df46e05-3a3f-43fd-9026-6d64de8a6405)
 
-Saat pengujian dengan spawn rate 200, didapatkan peak concurrency maksimum 2000 dengan failure 0% serta RPS 215,1 (26,025 poin)
+Saat pengujian dengan spawn rate 200, didapatkan peak concurrency maksimum 3000 dengan failure 0% serta rata-rata RPS 88,7 dengan peak RPS 285,3.
 
 5. Jumlah peak concurrency maksimum yang dapat ditangani oleh server dengan spawn rate 500 dan durasi waktu load testing 60 detik
-![image](https://github.com/haidarRA/fp-tka/assets/143814923/57f030a2-37c0-42d2-8d45-de2a33b16fe2)
+![image](https://github.com/haidarRA/fp-tka/assets/143814923/b49e5535-fe1a-4fa8-9f85-a1deb8781647)
 
-Saat pengujian dengan spawn rate 500, didapatkan peak concurrency maksimum 1500 dengan failure 0% serta rata-rata RPS 95,6 dengan peak RPS 251,63.
+Saat pengujian dengan spawn rate 500, didapatkan peak concurrency maksimum 1500 dengan failure 0% serta rata-rata RPS 107,4 dengan peak RPS 290,71.
 # Kesimpulan
 Berdasarkan pengetesan yang kita lakukan menggunakan locust yang telah disediakan, ada beberapa faktor yang memengaruhi pengetesan tersebut yaitu koneksi internet, peak concurrency yang diinput, spawn rate dalam bentuk users/second yang diinput serta spesifikasi dari vm yang akan diisi dengan backend. Lalu dalam pengetesan ini juga kami menggunakan mongodb Compass yang merupakan GUI dari jenis database yang kita gunakan untuk menghapus data dari pengetesan sebelumnya untuk melakukan pengetesan baru agar optimal.
 
